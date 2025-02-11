@@ -19,4 +19,4 @@ public:
     int getAge() const { return age; }
 };
 
-#endif // PERSON_H
+#endif // PERSON
