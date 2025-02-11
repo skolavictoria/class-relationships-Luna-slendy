@@ -4,30 +4,21 @@
 #include <vector>
 #include <iostream>
 #include <string>
+#include "Student.h"
 
-// Forward declaration 
-class Student;  
-
-// Class representing a course
 class Course {
 private:
     std::string courseID;
     std::string courseName;
-    //Course “owns” the list of students.
-    std::vector<Student*> enrolledStudents;  
+    std::vector<Student*> enrolledStudents;
 public:
     Course(const std::string& id, const std::string& name)
         : courseID(id), courseName(name) {}
-
     std::string getCourseID() const { return courseID; }
     std::string getCourseName() const { return courseName; }
-
-    //add a student to this course.
     void addStudent(Student* student) {
         enrolledStudents.push_back(student);
     }
-
-    // Displays all students in this course.
     void displayEnrolledStudents() const {
         std::cout << "Enrolled Students:" << std::endl;
         for (auto student : enrolledStudents) {
@@ -36,4 +27,4 @@ public:
     }
 };
 
-#endif 
+#endif // COURSE_H
